@@ -41,10 +41,10 @@ app.use(session({
   secret: 'your-secret-key',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/myDatabase',
-    collectionName: 'sessions'
-  }),
+  // store: MongoStore.create({
+  //   mongoUrl: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/myDatabase',
+  //   collectionName: 'sessions'
+  // }),
   cookie: { secure: false } // Đặt secure: true nếu dùng HTTPS
 }));
 app.use((req, res, next) => {
