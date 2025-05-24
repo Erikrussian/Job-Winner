@@ -17,18 +17,11 @@ class loginController {
                             return next(err);
                         }
                         if (isMatch) {                           
-                            if(user.status === 'banned'){
-                                return res.redirect('/login/banned');
-                            }
-                            req.session.user = user;
-
-                            if(user.role ==='transportation'){
-                               return res.redirect('/orderTransportation/orders');
-                            }
+                            
                             if(user.role ==='admin'){
                               return  res.redirect('/admin/products');
                             }
-                            console.log('Session after login:', req.session); // Thêm dòng này để in ra thông tin session
+                            console.log('Session after login:', req.session); 
 
                             console.log('Session after login:', req.session); 
 
@@ -87,7 +80,7 @@ class loginController {
                         from: process.env.EMAIL_USER,
                         to: email,
                         subject: 'OTP Code',
-                        text: `Chào mừng bạn đến với nền tảng đồ dùng secondHand ECOHAND\nMã xác nhận của bạn là: ${otp}`,
+                        text: `Chào mừng bạn đến với nền tảng Jobcomunity\nMã xác nhận của bạn là: ${otp}`,
                     }, (err, info) => {
                         if (err) {
                             console.error(err);

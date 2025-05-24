@@ -45,7 +45,7 @@ class registerController {
                             from: process.env.EMAIL_USER,
                             to: email,
                             subject: 'OTP Code',
-                            text: `Chào mừng bạn đến với nền tảng đồ dùng secondHand ECOHAND\nMã xác nhận của bạn là: ${otp}`,
+                            text: `Chào mừng bạn đến với nền tảng Job Community\nMã xác nhận của bạn là: ${otp}`,
                         }, (err, info) => {
                             if (err) {
                                 console.error(err);
